@@ -1,0 +1,165 @@
+html, body, *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+header{
+	color: #fff;
+}
+
+header a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.container-fluid{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#MisPerris {
+	margin: 10px;
+	max-width: 75%;
+}
+
+.logo-menu {
+	background: #85D4B7;
+}
+
+.logo-menu .menu a {
+	display: inline-block;
+	padding: 20px;
+	font-size: 16px;
+}
+
+.logo-menu .menu a:hover {
+	border-bottom: 4px solid white;
+	padding-bottom: 16px;
+}
+
+.carousel {
+	background: mediumaquamarine;
+	/*margin-top: 30px solid mediumaquamarine;*/
+}
+
+#imgpri {
+	max-width: 40%;
+}
+
+#crowfunding {
+	height: 196px;
+}
+
+.main {
+	background: mediumaquamarine;
+	color: white;
+	/*display: inline-block;*/
+}
+
+.main .carousel {
+	margin-bottom: 15px;
+}
+
+.main a img {
+	margin: 15px 10px;
+	width: 35px;
+}
+
+.main .articulos{
+	background: white;
+	color: black;
+	border: 24px solid white;
+	margin-top: 15px;
+}
+
+.main .articulos .derecha {
+	border-left: 1px solid darkgray;
+}
+
+.main .articulos h4{
+	color: dimgray;
+}
+
+.main .articulos strong {
+	border-style: solid;
+	border-width: 2px;
+}
+
+.main .articulos hr {
+	width: 75px;
+}
+
+.izquierda {
+	margin-left: auto;
+}
+
+.main .info p {
+	padding: 15px;
+}
+
+.pie {
+	border: 24px solid lightgray;
+	background: lightgray;
+	color: dimgray;
+	font-size: 14px;
+}
+
+.main form {
+	width: 100%;
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+}
+
+.main .imagenprro {
+	padding-top: 25px;
+	padding-bottom: 0;
+}
+
+.main .formulario {
+	background: white;
+	color: black;
+	padding: 20px;
+}
+
+.main #Titulo {
+	margin-top: 10px;
+}
+
+.slider {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: auto;
+  height: 250px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
+}
