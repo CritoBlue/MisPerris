@@ -32,10 +32,9 @@ class Persona(models.Model):
     tviv = models.ForeignKey(TipoVivienda, on_delete=models.SET_NULL, null=True)
     rut = models.CharField(max_length=10)
     nombre = models.CharField(max_length=100)
-    email = models.CharField(max_length=200)
-    tel = models.IntegerField()
-    bday = models.DateTimeField('Fecha de Nacimiento')
-    
+    email = models.EmailField(max_length=200)
+    tel = models.CharField(max_length=9)
+    bday = models.DateField('Fecha de Nacimiento')
     def publicar(self):
         self.save()
 
@@ -48,7 +47,6 @@ class Perro(models.Model):
     nombre = models.CharField(max_length=20)
     desc = models.CharField(max_length=100)
     persona = models.ForeignKey(Persona, on_delete=models.SET_NULL, null=True)
-    
     def publicar(self):
         self.save()
 
