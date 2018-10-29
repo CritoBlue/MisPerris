@@ -35,6 +35,10 @@ class Persona(models.Model):
     email = models.CharField(max_length=200)
     tel = models.IntegerField()
     bday = models.DateTimeField('Fecha de Nacimiento')
+    
+    def publicar(self):
+        self.save()
+
     def __str__(self):
         return self.nombre
 
@@ -44,5 +48,9 @@ class Perro(models.Model):
     nombre = models.CharField(max_length=20)
     desc = models.CharField(max_length=100)
     persona = models.ForeignKey(Persona, on_delete=models.SET_NULL, null=True)
+    
+    def publicar(self):
+        self.save()
+
     def __str__(self):
         return self.nombre
