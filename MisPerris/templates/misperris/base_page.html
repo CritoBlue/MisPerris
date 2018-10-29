@@ -1,53 +1,53 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<title>Mis Perris - Servicios</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-	<link rel="stylesheet" href={% static "./slick/slick.css" %}>
-  	<link rel="stylesheet" href={% static "./slick/slick-theme.css" %}>
-	<link rel="stylesheet" href={% static "css/style.css" %}>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
-	<script type="https://code.jquery.com/jquery-3.3.1.js"></script>
-</head>
-<body>
-	<div class="container-fluid">
-		<header>
-			<div class="logo-menu">
+	<head>
+		<title>Mis Perris - Servicios</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href={% static "./slick/slick.css" %}>
+	  	<link rel="stylesheet" href={% static "./slick/slick-theme.css" %}>
+		<link rel="stylesheet" href={% static "css/style.css" %}>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+		<script type="https://code.jquery.com/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<header>
+				<div class="logo-menu">
+					<div class="contenedor">
+						<div class="row">
+							<div class="logo col-xs-12 col-md-3 center-xs">
+								<img id="MisPerris" alt="Logo Mis Perris" src={% static "img/logo.png" %}>
+							</div>
+							<nav class="menu col-xs-12 col-md-9 center-xs middle-md">
+								<a href="/misperris/">Inicio</a>
+								<a href="#">Quienes Somos</a>
+								<a href="/misperris/servicios/">Servicios</a>
+								<a href="/misperris/contacto/">Contáctenos</a>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="main">
+			{% block content %}
+			{% endblock %}
+			</div>
+			<footer class="pie">
 				<div class="contenedor">
 					<div class="row">
-						<div class="logo col-xs-12 col-md-3 center-xs">
-							<img id="MisPerris" alt="Logo Mis Perris" src={% static "img/logo.png" %}>
+						<div class="col-xs-12 end-xs">
+							<p>Xuseto Web © 2018<br/>Escuela de Informática y Telecomunicaciones</p>
 						</div>
-						<nav class="menu col-xs-12 col-md-9 center-xs middle-md">
-							<a href="/misperris/">Inicio</a>
-							<a href="#">Quienes Somos</a>
-							<a href="/misperris/servicios/">Servicios</a>
-							<a href="/misperris/contacto/">Contáctenos</a>
-						</nav>
 					</div>
 				</div>
-			</div>
-		</header>
-		<div class="main">
-		{% block content %}
-		{% endblock %}
+			</footer>
 		</div>
-		<footer class="pie">
-			<div class="contenedor">
-				<div class="row">
-					<div class="col-xs-12 end-xs">
-						<p>Xuseto Web © 2018<br/>Escuela de Informática y Telecomunicaciones</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div>
-	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-  	<script src={% static "./slick/slick.js" %} type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" src={% static "js/slick_script.js" %}></script>
-</body>
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+	  	<script src={% static "./slick/slick.js" %} type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src={% static "js/slick_script.js" %}></script>
+	</body>
 </html>

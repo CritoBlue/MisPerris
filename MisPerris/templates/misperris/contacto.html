@@ -12,71 +12,21 @@
 	<div class="formulario row center-xs">
 		<div class="col-xs-12">
 			<h2>Contáctenos</h2>
-			<p>Envíenos sus datos de contacto si quiere adoptar un perrito o si desea mayor información.</p><br>
-			<form name="fdatos" method="post" action="https://youtu.be/JYxqP2vGKv4?t=42">
+			<p>Necesitaremos sus datos de contacto en caso de querer adoptar un perrito o si desea mayor información.</p><br>
+			<form name="fdatos" method="post">
 				{% csrf_token %}
 				<center>
 					<table>
-					<tr>
-						<td>Correo Electrónico: </td>
-						<td><input type="email" name="email" maxlength="100" required></td>
-					</tr>
-					<tr>
-						<td>Rut: </td>
-						<td><input type="text" name="rut" minlength="8" maxlength="10" required></td>
-					</tr>
-					<tr>
-						<td>Nombre: </td>
-						<td><input type="text" name="nombre" maxlength="30" required></td>
-					</tr>
-					<tr>
-						<td>Número Telefónico: </td>
-						<td><input type="number" name="telefono" min="900000000" max="999999999"></td>
-					</tr>
-					<tr>
-						<td>Fecha de Nacimiento:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-						<td><input type="date" name="fnac" max="2000-12-31"></td>
-					</tr>
-					<tr>
-						<td>Region</td>
-						<td>
-							<select name="region">
-								<option value="-1">Seleccione...</option>
-							{% for r in regions %}
-								<option value="{{r.id}}">{{ r.nombre }}</option>
-							{% endfor %}
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Ciudad</td>
-						<td>
-							<select name="ciudad">
-								<option value="-1">Seleccione...</option>
-							{% for c in cities %}
-								<option value="{{c.id}}">{{ c.nombre }}</option>
-							{% endfor %}
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Tipo de Vivienda:&nbsp; </td>
-						<td>
-							<select name="vivienda">
-								<option value="-1">Seleccione...</option>
-							{% for t in types %}
-								<option value="{{t.id}}">{{ t.desc }}</option>
-							{% endfor %}
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td><br></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center"><input type="button" value="Enviar" onClick="valida_datos()"></td>
-					</tr>
-				</table>
+						<tr>
+							<td>{{ form }}</td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"><input type="submit" value="Guardar Datos" onClick="valida_datos()"></td>
+						</tr>
+					</table>
 				</center>
 			</form>
 		</div>

@@ -11,61 +11,24 @@
 	</div>
 	<div class="formulario row center-xs">
 		<div class="col-xs-12">
-			<h2>Registro</h2>
-			<p>Ingrese datos del perrito a registrar.</p><br>
-			<form name="fdatos" method="post" action="https://youtu.be/JYxqP2vGKv4?t=42">
+			<h2>Registro de Adopción</h2>
+			<p>Ingrese datos del perrito que quiera dar en adopción.</p><br>
+			<form name="fdatos" method="post">
 				{% csrf_token %}
 				<center>
 					<table>
-					<tr>
-						<td>Nombre: </td>
-						<td><input type="text" name="nombre" maxlength="30" required></td>
-					</tr>
-					<tr>
-						<td>Raza: </td>
-						<td>
-							<select name="raza">
-								<option value="-1">Seleccione...</option>
-							{% for r in raza %}
-								<option value="{{r.id}}">{{ r.nombre }}</option>
-							{% endfor %}
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Estado: </td>
-						<td>
-							<select name="estado">
-								<option value="-1">Seleccione...</option>
-							{% for e in estado %}
-								<option value="{{e.id}}">{{ e.nombre }}</option>
-							{% endfor %}
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Descripcion: </td>
-						<td><input type="text" name="nombre" maxlength="200" required></td>
-					</tr>
-					<tr>
-						<td>Persona</td>
-						<td>
-							<select name="persona">
-								<option value="-1">Seleccione...</option>
-							{% for p in persona %}
-								<option value="{{p.id}}">{{ p.nombre }}</option>
-							{% endfor %}
-							</select>
-						</td>
-					</tr>
-					
-					<tr>
-						<td><br></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center"><input type="button" value="Enviar" onClick="valida_datos()"></td>
-					</tr>
-				</table>
+						<tr>
+							<td>{{ form }}</td>
+						</tr>
+						<tr>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" value="Guardar Datos" onClick="valida_datos()">
+							</td>
+						</tr>
+					</table>
 				</center>
 			</form>
 		</div>
