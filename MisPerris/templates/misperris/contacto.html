@@ -1,127 +1,85 @@
+{% extends 'misperris/base_page.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<title>Mis Perris - Contacto</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-	<link rel="stylesheet" href={% static "css/style.css" %}>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
-	<script type="https://code.jquery.com/jquery-3.3.1.js"></script>
-</head>
-<body>
-	<div class="content-fluid">
-		<header>
-			<div class="logo-menu">
-				<div class="contenedor">
-					<div class="row">
-						<div class="logo col-xs-12 col-md-3 center-xs">
-							<img id="MisPerris" alt="Logo Mis Perris" src={% static "img/logo.png" %}>
-						</div>
-						<nav class="menu col-xs-12 col-md-9 center-xs middle-md">
-							<a href="/misperris/">Inicio</a>
-							<a href="#">Quienes Somos</a>
-							<a href="/misperris/servicios/">Servicios</a>
-							<a href="/misperris/contacto/">Contáctenos</a>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</header>
-		<div class="main">
-			<div class="contenedor">
-				<div class="imagenprro row center-xs">
-					<div class="col-xs-12">
-						<img id="imgpri" src="img/perro.png" alt="Doggo">
-						<br>
-					</div>
-				</div>
-				<div class="formulario row center-xs">
-					<div class="col-xs-12">
-						<h2>Contáctenos</h2>
-						<p>Envíenos sus datos de contacto si quiere adoptar un perrito o si desea mayor información.</p><br>
-						<form name="fdatos" method="post" action="https://youtu.be/JYxqP2vGKv4?t=42">
-							{% csrf_token %}
-							<center>
-								<table>
-								<tr>
-									<td>Correo Electrónico: </td>
-									<td><input type="email" name="email" maxlength="100" required></td>
-								</tr>
-								<tr>
-									<td>Rut: </td>
-									<td><input type="text" name="rut" minlength="8" maxlength="10" required></td>
-								</tr>
-								<tr>
-									<td>Nombre: </td>
-									<td><input type="text" name="nombre" maxlength="30" required></td>
-								</tr>
-								<tr>
-									<td>Número Telefónico: </td>
-									<td><input type="number" name="telefono" min="900000000" max="999999999"></td>
-								</tr>
-								<tr>
-									<td>Fecha de Nacimiento:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-									<td><input type="date" name="fnac" max="2000-12-31"></td>
-								</tr>
-								<tr>
-									<td>Region</td>
-									<td>
-										<select name="region">
-											<option value="-1">Seleccione...</option>
-										{% for r in regions %}
-        									<option value="{{r.id}}">{{ r.nombre }}</option>
-    									{% endfor %}
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td>Ciudad</td>
-									<td>
-										<select name="ciudad">
-											<option value="-1">Seleccione...</option>
-										{% for c in cities %}
-        									<option value="{{c.id}}">{{ c.nombre }}</option>
-    									{% endfor %}
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td>Tipo de Vivienda:&nbsp; </td>
-									<td>
-										<select name="vivienda">
-											<option value="-1">Seleccione...</option>
-										{% for t in types %}
-        									<option value="{{t.id}}">{{ t.desc }}</option>
-    									{% endfor %}
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td><br></td>
-								</tr>
-								<tr>
-									<td colspan="2" align="center"><input type="button" value="Enviar" onClick="valida_datos()"></td>
-								</tr>
-							</table>
-							</center>
-						</form>
-					</div>
-				</div>
-			</div>
+
+{% block content %}
+<div class="contenedor">
+	<div class="imagenprro row center-xs">
+		<div class="col-xs-12">
+			<img id="imgpri" src={% static "img/perro.png" %} alt="Doggo">
+			<br>
 		</div>
-		<footer class="pie">
-			<div class="contenedor">
-				<div class="row">
-					<div class="col-xs-12 end-xs">
-						<p>Xuseto Web © 2018<br/>Escuela de Informática y Telecomunicaciones</p>
-					</div>
-				</div>
-			</div>
-		</footer>
 	</div>
-	<script src={% static "js/script.js" %}></script>
-</body>
-</html>
+	<div class="formulario row center-xs">
+		<div class="col-xs-12">
+			<h2>Contáctenos</h2>
+			<p>Envíenos sus datos de contacto si quiere adoptar un perrito o si desea mayor información.</p><br>
+			<form name="fdatos" method="post" action="https://youtu.be/JYxqP2vGKv4?t=42">
+				{% csrf_token %}
+				<center>
+					<table>
+					<tr>
+						<td>Correo Electrónico: </td>
+						<td><input type="email" name="email" maxlength="100" required></td>
+					</tr>
+					<tr>
+						<td>Rut: </td>
+						<td><input type="text" name="rut" minlength="8" maxlength="10" required></td>
+					</tr>
+					<tr>
+						<td>Nombre: </td>
+						<td><input type="text" name="nombre" maxlength="30" required></td>
+					</tr>
+					<tr>
+						<td>Número Telefónico: </td>
+						<td><input type="number" name="telefono" min="900000000" max="999999999"></td>
+					</tr>
+					<tr>
+						<td>Fecha de Nacimiento:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td><input type="date" name="fnac" max="2000-12-31"></td>
+					</tr>
+					<tr>
+						<td>Region</td>
+						<td>
+							<select name="region">
+								<option value="-1">Seleccione...</option>
+							{% for r in regions %}
+								<option value="{{r.id}}">{{ r.nombre }}</option>
+							{% endfor %}
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Ciudad</td>
+						<td>
+							<select name="ciudad">
+								<option value="-1">Seleccione...</option>
+							{% for c in cities %}
+								<option value="{{c.id}}">{{ c.nombre }}</option>
+							{% endfor %}
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Tipo de Vivienda:&nbsp; </td>
+						<td>
+							<select name="vivienda">
+								<option value="-1">Seleccione...</option>
+							{% for t in types %}
+								<option value="{{t.id}}">{{ t.desc }}</option>
+							{% endfor %}
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="button" value="Enviar" onClick="valida_datos()"></td>
+					</tr>
+				</table>
+				</center>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
