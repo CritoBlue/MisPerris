@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . import forms
+from .forms import PostForm
 from .models import Region, Ciudad, TipoVivienda, Raza, EstadoPerro, Persona, Perro
 
 def index(request):
@@ -12,8 +12,12 @@ def contacto(request):
 	tipoViv = TipoVivienda.objects.all()
 	return render(request, 'misperris/contacto.html', {"regions" : regions, "cities" : cities, "types" : tipoViv})
 
+
 def servicios(request):
-	return render(request, 'misperris/servicios.html')
+	estado = EstadoPerro.objects.all()
+	raza = Raza.objects.all()
+	persona = Persona.objects.all()
+	return render(request, 'misperris/servicios.html', {"estado" : estado, "raza" : raza, "persona" : persona})
 
 '''
 def create_persona (request):
