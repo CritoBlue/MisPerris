@@ -52,6 +52,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'MiWeb.urls'
 
+STATIC_ROOT = "/home/CritoBlue/MisPerris/MisPerris/static"
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -81,6 +83,7 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = ['critoblue.pythonanywhere.com']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
