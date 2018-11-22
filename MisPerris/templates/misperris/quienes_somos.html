@@ -1,0 +1,23 @@
+{% extends 'misperris/base_page.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="contenedor">
+	<div class="duoclogo row center-xs">
+		<div class="col-xs-12">
+			<img id="imgpri" src={% static "img/duoc.png" %} alt="Duoc UC">
+			<br>
+		</div>
+	</div>
+	<div class="articulos row center-xs">
+		<div class="col-xs-12">
+			<h2>Equipo de Desarrollo</h2><br>
+			<p>
+			    Hola, éste es el equipo de desarrollo detrás de la página de Mis Perris.<br>
+			    Nosotros somos <a href="https://github.com/yfuentesk/">Yerko Fuentes</a> y <a href="https://github.com/CritoBlue">Cristóbal Sierpe</a>,
+			    estudiantes de la carrera de Analista Programador Computacional de Duoc UC Sede Maipú.
+			</p><br>
+		</div>
+	</div>
+</div>
+{% endblock %}

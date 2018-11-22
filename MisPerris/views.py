@@ -1,9 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import logout as auth_logout
 from .forms import RawFormPersona, RawFormPerro
 from .models import Region, Ciudad, TipoVivienda, Raza, EstadoPerro, Persona, Perro
 
 def index(request):
 	return render(request, 'misperris/index.html')
+
+def quienes_somos(request):
+	return render(request, 'misperris/quienes_somos.html')
+
+def login(request):
+	return render(request, 'misperris/login.html')
+
+def logout_view(request):
+    auth_logout(request)
+    return render(request, 'misperris/index.html')
 
 def servicios(request):
 	estado = EstadoPerro.objects.all()
@@ -40,7 +51,7 @@ def contacto(request):
 			myform = RawFormPersona()
 		else:
 			print(myform.errors)
-	
+
 	context = {
 		"form" : myform,
 		"regions" : regions,

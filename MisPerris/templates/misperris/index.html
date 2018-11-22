@@ -50,7 +50,11 @@
 				<p>Teléfono: +56 9 9856 5431</p>
 			</div>
 			<div class="col-xs-12 col-md-4 center-xs">
-				<p>Rescate y adopción de perros callejeros</p>
+				{% if user.is_authenticated %}
+                    <p>Hola, {{ user.first_name }}</p>
+	            {% else %}
+                    <p>Rescate y adopción de perros callejeros</p>
+	            {% endif %}
 			</div>
 			<div class="col-md-4 col-xs-12 center-xs">
 				<a href="https://web.facebook.com/Mis-Perris-923123641206651/"><img alt="facebook" src={% static "img/facebook.png" %}></a>

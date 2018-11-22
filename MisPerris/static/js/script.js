@@ -1,4 +1,8 @@
-function valida_datos() {                            
+navigator.serviceWorker && navigator.serviceWorker.register('./sw.js').then(function(registration) {
+  console.log('Excellent, registered with scope: ', registration.scope);
+});
+
+function valida_datos() {
     if (document.fdatos.email.value.length==0)
     {
         alert("Tiene que escribir su correo electronico");
@@ -37,7 +41,7 @@ function valida_datos() {
             alert("Debe ser celular");
             document.fdatos.telefono.focus();
             return 0;
-        } 
+        }
     }
 
     if (document.fdatos.fnac.value.length==0)
@@ -72,14 +76,14 @@ function valida_datos() {
     document.fdatos.submit();
 }
 
-function validarnumero(valor){ 
-    valor = parseInt(valor); 
+function validarnumero(valor){
+    valor = parseInt(valor);
     if (isNaN(valor))
-    { 
+    {
         return "";
     }
     else
-    { 
+    {
         return valor;
-    } 
+    }
 }

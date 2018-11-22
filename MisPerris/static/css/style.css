@@ -26,22 +26,45 @@ header a{
 
 #MisPerris {
 	margin: 10px;
-	max-width: 75%;
+	max-width: 85%;
+}
+
+.submit {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: mediumaquamarine;
+    color: white;
 }
 
 .logo-menu {
 	background: #85D4B7;
 }
 
+.logo-menu .menu form {
+    display: inline-block;
+}
+
 .logo-menu .menu a {
 	display: inline-block;
-	padding: 20px;
+	padding: 25px 15px 20px 15px;
 	font-size: 16px;
 }
 
 .logo-menu .menu a:hover {
 	border-bottom: 4px solid white;
-	padding-bottom: 16px;
+	padding-bottom: 19px;
 }
 
 .carousel {
@@ -51,6 +74,10 @@ header a{
 
 #imgpri {
 	max-width: 40%;
+}
+
+#duoclogo{
+    max-width: 90%;
 }
 
 #crowfunding {
@@ -121,9 +148,13 @@ header a{
 	display: flex;
 }
 
-.main .imagenprro {
+.main .imagenprro{
 	padding-top: 25px;
 	padding-bottom: 0;
+}
+
+.main .duoclogo{
+	padding: 0px;
 }
 
 .main .formulario {
