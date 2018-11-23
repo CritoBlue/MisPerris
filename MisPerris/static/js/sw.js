@@ -7,6 +7,9 @@ self.addEventListener('install', function(event) {
         console.log('Opened cache');
         return cache.addAll([
         		'/',
+        		'/static/css/style.css',
+        		'/static/js/script.js',
+        		'/static/js/main.js',
         		//'/quienes_somos'
         	]);
       })
@@ -28,7 +31,7 @@ self.addEventListener('fetch', function(event) {
     );
 });
 
-//${event.data.text()}	
+//${event.data.text()}
 
 // Register event listener for the 'push' event.
 self.addEventListener('push', function(event) {
