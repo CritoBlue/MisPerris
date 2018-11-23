@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'MisPerris/static/js', 'sw.js')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -38,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django'
+    'social_django',
+    'pwa',
+    #'push_notifications',
     #'rest_framework',
 ]
 
@@ -106,6 +109,10 @@ SOCIAL_AUTH_DISCONNECT_PIPELINE = (
     'social.pipeline.disconnect.disconnect',
 )
 
+# PUSH_NOTIFICATIONS_SETTINGS = {
+# 	'GCM_API_KEY' : 'BEWS1IhTcSVb7XhvP-5yeE0Zhl-F0iCB1TN3m8JSBH2Gi-cUzMQ2DXeON-T8BiF1_1gQOb8YMncdwRZfp3BsIW8',
+# }
+
 WSGI_APPLICATION = 'MiWeb.wsgi.application'
 
 
@@ -119,7 +126,11 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ['critoblue.pythonanywhere.com']
+ALLOWED_HOSTS = [
+	'critoblue.pythonanywhere.com',
+	'127.0.0.1',
+	'localhost'
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

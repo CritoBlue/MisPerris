@@ -6,6 +6,9 @@ from .models import Region, Ciudad, TipoVivienda, Raza, EstadoPerro, Persona, Pe
 def index(request):
 	return render(request, 'misperris/index.html')
 
+def base_layout(request):
+	return render(request, 'misperris/base_page.html')
+
 def quienes_somos(request):
 	return render(request, 'misperris/quienes_somos.html')
 
